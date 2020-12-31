@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    @if (session()->exists(['name'],['pass']) !=null)
+    <title>Foodi admin {{session()->get('name')}}</title>
+    @else
+    <title>Foodi</title>
+    @endif
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 <style>
@@ -32,16 +36,18 @@ background:rgb(212, 211, 211);
           </li>
         </ul>
         <span class="navbar-text">
-        <a class="nav-link" href="{{url('/logout')}}">logout</a>
+        <a class="nav-link" href="{{url('/list_admin')}}">Food_List</a>
         </span>
         <span class="navbar-text">
-        <!-- drop down with name and profile -->
-        <a class="nav-link" href="{{url('/list_admin')}}">{{session()->get('name')}}</a>
-        </span>
+          <a class="nav-link" href="{{url('/massage_list_admin')}}">Massage_List</a>
+          </span>
         <form class="d-flex">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
+        <span class="navbar-text">
+          <a class="nav-link" href="{{url('/logout')}}">logout</a>
+          </span>
       </div>
     </div>
   </nav>

@@ -34,7 +34,7 @@
                   </a>
                   <a href="{{url('/delete_admin/'.$data->id)}}">
                   <button type="button" class="btn btn-danger">Delete</button>
-                </a>
+                  </a>
                 </td>
               </tr>
                 @endforeach

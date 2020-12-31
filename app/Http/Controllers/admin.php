@@ -116,8 +116,6 @@ class admin extends Controller
             $id=$request->id;
             DB::table('food')->where('id',$id)->delete();
             return redirect('/list_admin');
-            
-            
         
     }
    

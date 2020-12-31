@@ -13,7 +13,13 @@
           <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
         </div>
         <button class="btn btn-primary" type="submit">price:{{$data->price}} tk</button>
-        <button class="btn btn-success" type="submit">weight:{{$data->weight}}</button>
+        <button class="btn btn-success" type="submit">weight:{{$data->weight}}</button><br><br>
+        <a href="{{url('/edit_admin/'.$data->id)}}">
+          <button type="button" class="btn btn-primary">Edit</button>
+        </a>
+        <a href="{{url('/delete_admin/'.$data->id)}}">
+          <button type="button" class="btn btn-danger">Delete</button>
+        </a>
       </div>
     </div>
   </div>
